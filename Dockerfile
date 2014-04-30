@@ -26,8 +26,8 @@ ADD passenger_wsgi.py /home/app/sal/
 ADD run.sh /etc/my_init.d/run.sh
 RUN chown -R app:app /home/app/
 
-# enable ssh password authentication
-RUN echo "   PasswordAuthentication yes" >> /etc/ssh/ssh_config
+# enable sshd password authentication
+RUN echo "   PasswordAuthentication yes" >> /etc/ssh/sshd_config
 
 # add tsadmin user
 RUN adduser tsadmin
