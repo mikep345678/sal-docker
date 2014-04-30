@@ -28,7 +28,8 @@ RUN chown -R app:app /home/app/
 
 RUN adduser tsadmin
 RUN usermod -aG sudo tsadmin
-RUN echo "password" | passwd "tsadmin" --stdin
+RUN echo tsadmin:password | chpasswd
+#RUN echo "password" | passwd "tsadmin" --stdin
 
 ADD sal.conf /etc/nginx/sites-enabled/sal.conf
 RUN rm -f /etc/nginx/sites-enabled/default
