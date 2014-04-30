@@ -26,6 +26,9 @@ ADD passenger_wsgi.py /home/app/sal/
 ADD run.sh /etc/my_init.d/run.sh
 RUN chown -R app:app /home/app/
 
+RUN adduser tsadmin sudo
+RUN echo "password" | passwd "tsadmin" --stdin
+
 ADD sal.conf /etc/nginx/sites-enabled/sal.conf
 RUN rm -f /etc/nginx/sites-enabled/default
 RUN rm -f /etc/service/nginx/down
