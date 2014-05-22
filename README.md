@@ -23,7 +23,7 @@ In the folder with the Dockerfile, run
 ```sudo docker run -t -i -p 8082:8080 -p 10222:22 --link sal-postgresql:db mikep345678/sal-docker /bin/bash```
 
 ## commit changes made in shell
-```sudo docker commit $(sudo docker ps -l) mikep345678/sal-docker```
+```sudo docker commit $(sudo docker ps -l -q) mikep345678/sal-docker```
 
 #Run PostgreSQL container
 
