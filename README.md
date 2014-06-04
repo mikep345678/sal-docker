@@ -40,13 +40,7 @@ for making changes- provides alternate HTTP and SSH connection ports. ```exit```
 
 #Run PostgreSQL container
 
-    docker run -d --name="sal-postgresql" \
-                 -p 127.0.0.1:5432:5432 \
-                 -v /tmp/postgresql:/data \
-                 -e USER="saladmin" \
-                 -e DB="sal_db" \
-                 -e PASS="password" \
-                 paintedfox/postgresql
+    docker run -d --name="sal-postgresql" -p 127.0.0.1:5432:5432 -v /data:/data -e USER="saladmin" -e DB="sal_db" -e PASS="password" paintedfox/postgresql
 
 
 
